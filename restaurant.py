@@ -1,8 +1,6 @@
 import time
 import random
 import pyautogui
-import kitchen
-import scence
 
 orderPositions = [
   [140, 400],
@@ -28,12 +26,6 @@ driedFishPosition = [
   [220, 620]
 ]
 
-# 定位到宣传按钮
-def locateToPublicCityClick(count, mouseMoveSpeed):
-  pyautogui.moveTo(412, 788, mouseMoveSpeed)
-  for i in range(count):
-    pyautogui.click()
-
 # 点菜
 def orderDishes(mouseMoveSpeed):
   time.sleep(random.randint(0, 3))
@@ -58,18 +50,8 @@ def fuckFox(mouseMoveSpeed):
   for i in range(20):
     pyautogui.click()
 
-def run(count = 10000 , publicCityClick = 64, mouseMoveSpeed = 0.05):
-  for i in range(count):
-    print('上菜...')
-    orderDishes(mouseMoveSpeed)
-    print('拾取鱼干...')
-    pickUpDriedFish(mouseMoveSpeed)
-    print('宣传...')
-    locateToPublicCityClick(publicCityClick, mouseMoveSpeed)
-    if(i + 1) % 5:
-      print("前往厨房")
-      scence.goToKitchen()
-      print("拾取鱼干")
-      kitchen.pickUpDriedFish(mouseMoveSpeed=mouseMoveSpeed )
-      print("前往餐厅")
-      scence.goToRestaurant()
+# 定位到宣传按钮
+def locateToPublicCityClick(publicCityClickCount, mouseMoveSpeed):
+  pyautogui.moveTo(412, 788, mouseMoveSpeed)
+  for i in range(random.randint(1, publicCityClickCount)):
+    pyautogui.click()

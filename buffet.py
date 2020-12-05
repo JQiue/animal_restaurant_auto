@@ -1,14 +1,7 @@
-import time
-import random
 import pyautogui
 
 driedFishPosition = [
-  [60, 320],
-  [380, 340],
-  [200, 650],
-  [145, 400],
-  [85, 400],
-  [340, 510],
+  [360, 640]
 ]
 
 def pickUpDriedFish(mouseMoveSpeed):
