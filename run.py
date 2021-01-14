@@ -35,8 +35,6 @@ def run(count = 50000, publicCityClickCount = 64, mouseMoveSpeed = 0.1):
     if(i + 1) % 10 == 0:
       time.sleep(random.randint(5, 30))
       move.toLeft()
-      garden.pickUpStar(mouseMoveSpeed)
-      garden.decorateFlower(mouseMoveSpeed)
       garden.sowFlower(mouseMoveSpeed)
       move.toRight()
 
