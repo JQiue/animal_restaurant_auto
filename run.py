@@ -27,7 +27,7 @@ def run(count = 50000, publicCityClickCount = 64, mouseMoveSpeed = 0.1):
       garden.pickUpStar(mouseMoveSpeed)
       garden.decorateFlower(mouseMoveSpeed)
       garden.sowFlower(mouseMoveSpeed)
-      move.toRight
+      move.toRight()
 
 if __name__=='__main__':
   p1 = multiprocessing.Process(target=run,args=())
