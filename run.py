@@ -9,18 +9,29 @@ import move
 
 def run(count = 50000, publicCityClickCount = 64, mouseMoveSpeed = 0.1):
   print('开始咯...')
+  #归位
+  move.toLeft()
+  move.toLeft()
+  move.toLeft()
+  move.toLeft()
+  move.toRight()
+  move.toRight()
+  
+  #开始循环
   for i in range(count):
     restaurant.locateToPublicCityClick(publicCityClickCount, mouseMoveSpeed)
     restaurant.orderDishes(mouseMoveSpeed)
     if(i + 1) % 3 == 0:
       restaurant.pickUpDriedFish(mouseMoveSpeed)
       move.toRight()
+      time.sleep(0.2)
       kitchen.pickUpDriedFish(mouseMoveSpeed=mouseMoveSpeed)
       move.toLeft()
       move.toLeft()
+      time.sleep(0.2)
       garden.pickUpDriedFish(mouseMoveSpeed=mouseMoveSpeed)
       move.toRight()
-      restaurant.fuckFox(mouseMoveSpeed)
+#      restaurant.fuckFox(mouseMoveSpeed)  有员工，暂时去除
     if(i + 1) % 10 == 0:
       time.sleep(random.randint(5, 30))
       move.toLeft()
