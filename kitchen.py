@@ -1,6 +1,10 @@
 import time
 import random
 import pyautogui
+import base
+
+x ,y = base.first()
+
 
 driedFishPosition = [
   [60, 320],
@@ -10,6 +14,10 @@ driedFishPosition = [
   [85, 400],
   [340, 510],
 ]
+for origin in driedFishPosition:
+    origin[0]=origin[0] + x
+    origin[1]=origin[1] + y
+
 
 def pickUpDriedFish(mouseMoveSpeed):
   for items in driedFishPosition:

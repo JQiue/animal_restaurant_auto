@@ -6,6 +6,7 @@ import restaurant
 import garden
 import kitchen
 import move
+import base
 
 def run(count = 50000, publicCityClickCount = 64, mouseMoveSpeed = 0.1):
   print('开始咯...')
