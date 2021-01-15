@@ -1,18 +1,21 @@
 import pyautogui
+import base
+
+x ,y = base.first()
 
 def toLeft():
-  pyautogui.moveTo(227, 467, 0.5)
-  pyautogui.dragTo(260, 467, 0.3)
+  pyautogui.moveTo(25+x, 442+y, 0.5)
+  pyautogui.click()
 
 
 def toRight():
-  pyautogui.moveTo(227, 467, 0.5)
-  pyautogui.dragTo(180, 467, 0.3)
+  pyautogui.moveTo(419+x, 442+y, 0.5)
+  pyautogui.click()
 
 def toUp():
-  pyautogui.moveTo(227, 467, 0.5)
-  pyautogui.dragTo(227, 520, 0.3)
+  pyautogui.moveTo(150+x, 207+y, 0.5)
+  pyautogui.click()
 
 def toDown():
-  pyautogui.moveTo(227, 467, 0.5)
-  pyautogui.dragTo(227, 420, 0.3)
+  pyautogui.moveTo(166+x, 800+y, 0.5)
+  pyautogui.click()

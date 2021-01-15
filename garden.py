@@ -1,9 +1,18 @@
 import pyautogui
 import time
+import base
+
+x ,y = base.first()
+
+
 
 driedFishPosition = [
-  [50, 270]
+  [50, 270],
+  [305, 233]
 ]
+for origin in driedFishPosition:
+    origin[0]=origin[0] + x
+    origin[1]=origin[1] + y
 
 potPosition = [
   [136, 411],
@@ -11,23 +20,13 @@ potPosition = [
   [311, 405],
   [226, 546],
   [135, 525],
+  [226, 546],
+  [311, 525],
   [226, 546]
 ]
-
-flowerPosition = [
-  [197, 392],
-  [175, 383],
-  [360, 392],
-  [358, 386],
-  [193, 506],
-  [179, 500]
-]
-
-starsPosition = [
-  [214, 247],
-  [285, 247],
-  [363, 247]
-]
+for origin in potPosition:
+    origin[0]=origin[0] + x
+    origin[1]=origin[1] + y
 
 def pickUpDriedFish(mouseMoveSpeed):
   for items in driedFishPosition:
@@ -39,14 +38,4 @@ def sowFlower(mouseMoveSpeed):
     pyautogui.moveTo(items[0], items[1], mouseMoveSpeed)
     pyautogui.click()
     time.sleep(0.5)
-    pyautogui.click()
-
-def decorateFlower(mouseMoveSpeed):
-  for items in flowerPosition:
-    pyautogui.moveTo(items[0], items[1], mouseMoveSpeed)
-    pyautogui.click()
-
-def pickUpStar(mouseMoveSpeed):
-  for items in starsPosition:
-    pyautogui.moveTo(items[0], items[1], mouseMoveSpeed)
     pyautogui.click()
