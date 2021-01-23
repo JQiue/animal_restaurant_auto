@@ -43,6 +43,9 @@ def import_img(spimg):
         img = cv2.imread('res/img/crow.jpg')
     elif spimg == 'tv':
         img = cv2.imread('res/img/tv.jpg')
+    elif spimg == 'fine':
+        img = cv2.imread('res/img/fine.jpg')
+
     return img
     
     
@@ -66,7 +69,7 @@ def get_screen_img():
     img=Image.open('main.bmp')
     img.save('main.jpg')
 
-def scan(object) -> object:
+def scan(object):
     get_screen_img()
     target = cv2.imread("main.jpg")
     template = import_img(object)
@@ -85,8 +88,8 @@ def scan(object) -> object:
 
     cv2.waitKey()
     cv2.destroyAllWindows()
-    a = min_loc[0] + 10
-    b = min_loc[1] + 5
+    a = min_loc[0] + 50
+    b = min_loc[1] + 50
     x = int(a)
     y = int(b)
     return min_val, x, y

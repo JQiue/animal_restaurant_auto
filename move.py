@@ -1,7 +1,7 @@
 import pyautogui
 import base
 
-x ,y = base.first()
+x ,y, r, b = base.first()
 
 def toLeft():
   pyautogui.moveTo(25+x, 442+y, 0.5)

@@ -3,8 +3,7 @@ import random
 import pyautogui
 import base
 
-x ,y = base.first()
-
+x ,y, r, b = base.first()
 
 driedFishPosition = [
   [60, 320],

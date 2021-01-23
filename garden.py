@@ -2,7 +2,7 @@ import pyautogui
 import time
 import base
 
-x ,y = base.first()
+x ,y, r, b = base.first()
 
 
 
