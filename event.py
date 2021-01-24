@@ -1,10 +1,10 @@
-import move
 import base
 import pyautogui
 import time
 
 x ,y, r, b = base.first()
 no = [135+x,725+y]
+yes = [310+x,725+y]
 salesmanPosition = [149+x,728+y]
 
 def fuck_fox():
@@ -27,7 +27,7 @@ def fuck_bird():
         o, bird_x, bird_y = base.scan('bird')
         bird_x=bird_x + x
         bird_y=bird_y + y
-        pyautogui.moveTo(bird_x,bird_y,0.3)
+        pyautogui.moveTo(bird_x ,bird_y,0.3)
         pyautogui.click()
         pyautogui.click()
         time.sleep(0.1)
@@ -39,9 +39,8 @@ def fuck_tv():
     tv_y = tv_y + y
     pyautogui.moveTo(tv_x, tv_y,0.3)
     pyautogui.click()
-    pyautogui.moveTo(no[0],no[1],0.3)
-    time.sleep(1)
-    pyautogui.click()
+    time.sleep(0.5)
+    adv()
 
 def fuck_panda():
     i = 0
@@ -56,9 +55,47 @@ def fuck_panda():
         time.sleep(0.1)
 
 def fuck_fine():
-    time.sleep(5)
-    pyautogui.moveTo(217+y, 550+x,0.3)
+    pyautogui.moveTo(214+x, 545+y,0.3)
     pyautogui.click()
+
+def fuck_crow():
+    pyautogui.moveTo(379 + x, 265 + y, 0.3)
+    pyautogui.click()
+    pyautogui.moveTo(no[0], no[1],0.3)
+    pyautogui.click()
+
+
+def fuck_rat():
+    pyautogui.moveTo(169+x, 349+y, 0.3)
+    pyautogui.click()
+    time.sleep(0.5)
+    pyautogui.click()
+    time.sleep(0.5)
+    pyautogui.moveTo(yes[0], yes[1], 0.3)
+    time.sleep(0.5)
+    pyautogui.moveTo(120+x,300+y,0.3)
+
+def fuck_witch():
+    pyautogui.moveTo(396 + x, 271 + y, 0.3)
+    pyautogui.click()
+    adv()
+
+def adv():
+  pyautogui.moveTo(yes[0], yes[1], 0.3)
+  pyautogui.click()
+  time.sleep(0.1)
+  pyautogui.moveTo(x+220, y+550, 0.3)
+  pyautogui.click()
+  pyautogui.moveTo(x+370, y+75, 0.3)
+  time.sleep(1)
+  pyautogui.click()
+  time.sleep(31)
+  pyautogui.moveTo(x+410, y+75, 0.3)
+  pyautogui.click()
+  time.sleep(0.5)
+  pyautogui.click()
+  time.sleep(0.5)
+  pyautogui.click()
 
 
 

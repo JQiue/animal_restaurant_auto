@@ -2,7 +2,7 @@ import time
 import random
 import pyautogui
 import base
-
+import event
 x ,y, r, b = base.first()
 
 
@@ -44,8 +44,6 @@ publicCityClickPosition=[412+x,788+y]
 
 
 
-
-
 # 点菜
 def orderDishes(mouseMoveSpeed):
   time.sleep(random.randint(0, 3))
@@ -74,4 +72,34 @@ def fuckFox(mouseMoveSpeed):
 def locateToPublicCityClick(publicCityClickCount, mouseMoveSpeed):
   pyautogui.moveTo(publicCityClickPosition[0], publicCityClickPosition[1], mouseMoveSpeed)
   for i in range(random.randint(1, publicCityClickCount)):
-    pyautogui.click()
+      pyautogui.click()
+      time.sleep(0.1)
+  event.fuck_fine()
+  check_event()
+
+
+
+def check_event():
+  event.fuck_fine()
+  base.get_screen_img()
+  bird_exist, bird_x, bird_y = base.scan('bird')
+  tv_exist, tv_x, tv_y = base.scan('tv')
+  witch_exist, witch_x, witch_y = base.scan('witch')
+  witch_exist2, witch_x, witch_y = base.scan('witch2')
+  rat_exist, rat_x, rat_y = base.scan('rat')
+  crow_exist, crow_x, crow_y = base.scan('crow')
+  print("witch" + str(witch_exist+witch_exist2))
+  print("bird" + str(bird_exist))
+  print("tv" + str(tv_exist))
+  print("rat" + str(rat_exist))
+  print("crow" + str(crow_exist))
+  if witch_exist+witch_exist2 != 0:
+      event.fuck_witch()
+  elif bird_exist == 1:
+    event.fuck_bird()
+  elif tv_exist == 1:
+    event.fuck_tv()
+  elif rat_exist == 1:
+    event.fuck_rat()
+  elif crow_exist == 1:
+    event.fuck_crow()

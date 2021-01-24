@@ -6,7 +6,7 @@ import base
 x ,y, r, b = base.first()
 
 driedFishPosition = [
-  [60, 320],
+  [50, 300],
   [380, 340],
   [200, 650],
   [145, 400],

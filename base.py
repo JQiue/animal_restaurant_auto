@@ -45,7 +45,12 @@ def import_img(spimg):
         img = cv2.imread('res/img/tv.jpg')
     elif spimg == 'fine':
         img = cv2.imread('res/img/fine.jpg')
-
+    elif spimg == 'panda':
+        img = cv2.imread('res/img/panda.jpg')
+    elif spimg == 'witch':
+        img = cv2.imread('res/img/witch.jpg')
+    elif spimg == 'witch2':
+        img = cv2.imread('res/img/witch2.jpg')
     return img
     
     
@@ -70,7 +75,6 @@ def get_screen_img():
     img.save('main.jpg')
 
 def scan(object):
-    get_screen_img()
     target = cv2.imread("main.jpg")
     template = import_img(object)
     # 获得模板图片的高宽尺寸
@@ -78,36 +82,22 @@ def scan(object):
     # 执行模板匹配，采用的匹配方式cv2.TM_SQDIFF_NORMED
     result = cv2.matchTemplate(target, template, cv2.TM_SQDIFF_NORMED)
     # 归一化处理
-
     # 寻找矩阵（一维数组当做向量，用Mat定义）中的最大值和最小值的匹配结果及其位置
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
     # 匹配值转换为字符串
     # 对于cv2.TM_SQDIFF及cv2.TM_SQDIFF_NORMED方法min_val越趋近与0匹配度越好，匹配位置取min_loc
     # 对于其他方法max_val越趋近于1匹配度越好，匹配位置取max_loc
 #    strmin_val = str(min_val)
-
     cv2.waitKey()
     cv2.destroyAllWindows()
     a = min_loc[0] + 50
     b = min_loc[1] + 50
     x = int(a)
     y = int(b)
-    return min_val, x, y
-
-def check_character(target):
-    total = 0
-    o = 0
-    while o < 3 :
-        i, x, y = scan(target)
-        total=total+i
-        o=o+1
-        time.sleep(0.1)
-    if total>0.2:
+    if min_val>0.06:
         return 0,x,y
     else:
         return 1,x,y
-    
-
 
 
 def scene_check():
